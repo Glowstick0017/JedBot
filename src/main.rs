@@ -9,7 +9,7 @@ struct Handler;
 #[async_trait]
 impl EventHandler for Handler {
     async fn message(&self, ctx: Context, msg: Message) {
-        if msg.content.to_uppercase() == "JED" {
+        if msg.content.to_uppercase().contains("JED") {
             msg.channel_id.say(&ctx.http, "what").await;
         }
     }
