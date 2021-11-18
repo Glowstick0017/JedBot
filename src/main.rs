@@ -29,11 +29,16 @@ impl EventHandler for Handler {
                 
                 if msg.content.to_uppercase().contains("HELLO THERE"){
                   let _ = msg.reply_ping(&ctx.http,"General Kenobi").await;
+                  return;
                 }
-                if msg.content.to_uppercase() == msg.content {
+                if msg.content.to_uppercase() == msg.content && msg.content.to_uppercase() != "AES" {
                   let _ = msg.reply_ping(&ctx.http,"I can hear voices at the back of the room...").await;
+                  return;
                 }
-                                  
+                if msg.content.to_uppercase() == "AES"{
+                  let _ = msg.reply_ping(&ctx.http,"Ummm so .... yeahhhh. I think ahh.. that you forgot a keeyyyy when computing your value.").await;
+                  return;
+                }                  
                 // reads for any substring of 'jed' regardless of case
                 if msg.content.to_uppercase().contains(" JED ") ||
                 msg.content.to_uppercase().starts_with("JED ") ||
