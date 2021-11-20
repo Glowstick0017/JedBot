@@ -3,7 +3,7 @@
 [![Dependency Status][dependency-badge]][dependency-link]
 [![GitHub release](https://img.shields.io/github/release/JedBot/StrapDown.js.svg)](https://GitHub.com/JedBot/StrapDown.js/releases/)
 [![Documentation Status](https://readthedocs.org/projects/ansicolortags/badge/?version=latest)](https://github.com/Glowstick0017/JedBot/wiki)
-
+[![MIT license](https://img.shields.io/badge/License-MIT-blue.svg)](https://lbesson.mit-license.org/)
 
 A feature-packed bot for Discord servers that simulates Jed Crandall! Written in Rust with Serenity and various other libraries.
 
@@ -144,9 +144,29 @@ cargo run # (--release if you want to run the optimized variant)
 Congratulations! You have (hopefully) successfully installed and set up JedBot, and you can now add the bot to
 any guild you'd like. (if you have the permission to of course from Glowstick0017)
 
-### Licensing
+### Licensing 
 
-None so far lol, please don't steal from or sue us.
+MIT License
+
+Copyright (c) 2021 Glowstick // Robbie
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
 
 [invite-link]: https://discordapp.com/oauth2/authorize?client_id=907699386883112980&scope=bot
 [invite-badge]: https://img.shields.io/badge/invite-to%20your%20Discord%20server-7289da.svg?style=flat-square&logo=discord
