@@ -9,7 +9,7 @@ A feature-packed bot for Discord servers that simulates Jed Crandall! Written in
 
 
 
-credits: [@PseudoSyntax](https://github.com/PseudoSyntax), [@gatoflaco](https://github.com/gatoflaco), [@DaumanaASU](https://github.com/DaumanaASU), [@SaajanM](https://github.com/SaajanM), [@Jbautista13](https://github.com/Jbautista13), [@JesusM2011](https://github.com/JesusM2011), [@bROkEnbYtE](https://github.com/brokenbyte)
+credits: [@PseudoSyntax](https://github.com/PseudoSyntax), [@gatoflaco](https://github.com/gatoflaco), [@DaumanaASU](https://github.com/DaumanaASU), [@SaajanM](https://github.com/SaajanM), [@Jbautista13](https://github.com/Jbautista13), [@JesusM2011](https://github.com/JesusM2011), [@bROckEnbItE](https://github.com/brokenbyte)
 
 
 <p align="center">
