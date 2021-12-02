@@ -1,6 +1,7 @@
+use rand::seq::SliceRandom;
 use serenity::{
     async_trait,
-    model::{channel::Message, gateway::Ready, channel::Reaction, channel::ReactionType},
+    model::{channel::Message, channel::Reaction, channel::ReactionType, gateway::Ready},
     prelude::*,
 };
 use std::fs::OpenOptions;
@@ -25,7 +26,7 @@ impl EventHandler for Handler {
             }
 
             // only responds in #bot-commands
-            if msg.channel_id.eq(&879561100260151356) {                
+            if msg.channel_id.eq(&879561100260151356) {
                 if msg.content.to_uppercase().contains("JED")
                     && msg.content.to_uppercase().contains("?")
                 {
@@ -37,12 +38,24 @@ impl EventHandler for Handler {
                         .await;
                     return;
                 }
+                if msg.content.to_uppercase().contains("RAND") {
+                    let vs = vec![
+                        "please dont kill me",
+                        "A lot of it is like child pornography",
+                    ];
+                    let mes = vs
+                        .choose(&mut rand::thread_rng())
+                        .as_deref()
+                        .unwrap_or(&"default string")
+                        .to_owned();
+                    let _ = msg.reply_ping(&ctx.http, mes).await;
+                    return;
+                }
                 if msg.content.to_uppercase().contains("SUSSY") {
                     let _ = msg
                         .reply_ping(
                             &ctx.http,
-                            SUSSY.to_owned() // i c that now
-                            
+                            SUSSY.to_owned(), // i c that now
                         )
                         .await;
                     return;
@@ -63,7 +76,6 @@ impl EventHandler for Handler {
                     return;
                 }
 
-                
                 if msg.content.to_uppercase().contains("MAGIC") {
                     let _ = msg
                         .reply_ping(
@@ -128,7 +140,10 @@ impl EventHandler for Handler {
                 }
                 if msg.content.to_uppercase().contains("ADVICE") {
                     let _ = msg
-                        .reply_ping(&ctx.http, "It is better to be a warrior in a garden than a garden in a war.")
+                        .reply_ping(
+                            &ctx.http,
+                            "It is better to be a warrior in a garden than a garden in a war.",
+                        )
                         .await;
                     return;
                 }
@@ -145,15 +160,11 @@ impl EventHandler for Handler {
                     return;
                 }
                 if msg.content.to_uppercase().contains("CALM DOWN") {
-                    let _ = msg
-                        .reply_ping(&ctx.http, "NO.")
-                        .await;
+                    let _ = msg.reply_ping(&ctx.http, "NO.").await;
                     return;
                 }
                 if msg.content.to_uppercase().contains("GIVE") {
-                    let _ = msg
-                        .reply_ping(&ctx.http, "no")
-                        .await;
+                    let _ = msg.reply_ping(&ctx.http, "no").await;
                     return;
                 }
                 // reads for any substring of 'jed' regardless of case
@@ -175,15 +186,22 @@ impl EventHandler for Handler {
                 }
 
                 if msg.content.to_uppercase() == "HOW WAS YOUR DAY" {
-                    let _ = msg.reply_ping(&ctx.http,"these kids are tough. I got 600 students in three sections.").await;
+                    let _ = msg
+                        .reply_ping(
+                            &ctx.http,
+                            "these kids are tough. I got 600 students in three sections.",
+                        )
+                        .await;
                     return;
                 }
 
-                let s = msg.content.chars().filter(|c| c.is_alphabetic()).collect::<String>();
+                let s = msg
+                    .content
+                    .chars()
+                    .filter(|c| c.is_alphabetic())
+                    .collect::<String>();
 
-                if s.chars().all(char::is_uppercase)
-                && !(s.is_empty())
-                {
+                if s.chars().all(char::is_uppercase) && !(s.is_empty()) {
                     let _ = msg
                         .reply_ping(&ctx.http, "I can hear voices at the back of the room...")
                         .await;
@@ -193,30 +211,29 @@ impl EventHandler for Handler {
                 // NO COMMANDS AFTER THIS COMMENT (keep commands in bot channel)
             }
         }
-
     }
 
     async fn reaction_add(&self, ctx: Context, add_reaction: Reaction) {
-    if add_reaction.channel_id.eq(&879561100260151356) {
-          match add_reaction.emoji{
-              ReactionType::Unicode(ref s) => {
-                  let c = s.chars().nth(0).unwrap();
-                  if c == '😂' || c == '🤣' || c == '😆' {
-                      match add_reaction.user_id{
-                        Some(ref id) =>{
-                            let mut message = "Ummm... soo yeahh, I think we should keep it a bit more respectful in here <@".to_owned();
-                            message.push_str(&id.as_u64().to_string());
-                            message.push_str(">");
-                            let _ = add_reaction.channel_id.say(&ctx.http,message).await;
-                        },
-                        _ => {}
-                      }
-                  }
-              },
-              _ => {}
-          };
-      }
-  }
+        if add_reaction.channel_id.eq(&879561100260151356) {
+            match add_reaction.emoji {
+                ReactionType::Unicode(ref s) => {
+                    let c = s.chars().nth(0).unwrap();
+                    if c == '😂' || c == '🤣' || c == '😆' {
+                        match add_reaction.user_id {
+                            Some(ref id) => {
+                                let mut message = "Ummm... soo yeahh, I think we should keep it a bit more respectful in here <@".to_owned();
+                                message.push_str(&id.as_u64().to_string());
+                                message.push_str(">");
+                                let _ = add_reaction.channel_id.say(&ctx.http, message).await;
+                            }
+                            _ => {}
+                        }
+                    }
+                }
+                _ => {}
+            };
+        }
+    }
 
     async fn ready(&self, _: Context, ready: Ready) {
         println!("{} is connected!", ready.user.name);
@@ -224,7 +241,7 @@ impl EventHandler for Handler {
 }
 #[tokio::main]
 async fn main() {
-    let mut client = Client::builder("ENTER TOKEN HERE")
+    let mut client = Client::builder("OTA3Njk5Mzg2ODgzMTEyOTgw.YYq-7g.nHPxP9rcc6BQkQhRV3jAYDeJIsg")
         .event_handler(Handler)
         .await
         .expect("Err creating client");
