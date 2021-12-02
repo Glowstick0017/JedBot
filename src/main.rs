@@ -241,7 +241,7 @@ impl EventHandler for Handler {
 }
 #[tokio::main]
 async fn main() {
-    let mut client = Client::builder("OTA3Njk5Mzg2ODgzMTEyOTgw.YYq-7g.nHPxP9rcc6BQkQhRV3jAYDeJIsg")
+    let mut client = Client::builder("TOKEN HERE")
         .event_handler(Handler)
         .await
         .expect("Err creating client");
