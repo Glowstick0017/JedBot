@@ -106,7 +106,7 @@ impl EventHandler for Handler {
                 if msg.content.to_uppercase().contains("JOKE") {
                     let _ = msg.reply_ping(&ctx.http,"SQL walks into a bar, then it walks out... \n Because there was no tables!😂").await;
                 }
-                // Saajan - MythicalEngineer
+                // M
                 if msg.content.to_uppercase().contains("I LIKE MAC")
                     || msg.content.to_uppercase().contains("I LIKE WINDOWS")
                 {
@@ -126,12 +126,12 @@ impl EventHandler for Handler {
                         )
                         .await;
                 }
-                // Saajan - MythicalEngineer
+                // M
                 if msg.content.to_uppercase() == "AES" {
                     let _ = msg.reply_ping(&ctx.http,"Ummm so .... yeahhhh. I think ahh.. that you forgot a keeyyyy when computing your value.").await;
                     return;
                 }
-                // Saajan - MythicalEngineer
+                // M
                 if msg.content.to_uppercase().contains("MAKE A PIPE") {
                     let _ = msg
                         .reply_ping(&ctx.http, "Here you go: my_unnamed_pipe👍")
