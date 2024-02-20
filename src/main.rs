@@ -41,7 +41,7 @@ impl EventHandler for Handler {
                 if msg.content.to_uppercase().contains("RAND") {
                     let vs = vec![
                         "please dont kill me",
-                        "A lot of it is like child pornography",
+                        "A lot of it is like bad things",
                     ];
                     let mes = vs
                         .choose(&mut rand::thread_rng())
